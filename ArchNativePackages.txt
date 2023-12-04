@@ -24,7 +24,6 @@ file-roller
 flameshot
 flatpak
 font-manager
-fzf
 gcolor3
 gdb
 gimp
@@ -47,7 +46,6 @@ jq
 kitty
 kvantum
 lazygit
-lf
 libreoffice-still
 lightdm-slick-greeter
 linux-firmware
@@ -106,10 +104,10 @@ system-config-printer
 tealdeer
 thunar
 thunar-archive-plugin
+timeshift
 tk
 tlp
 toilet
-trash-cli
 tree
 ttf-dejavu-nerd
 ttf-jetbrains-mono-nerd
@@ -133,7 +131,10 @@ wget
 wmctrl
 xcalib
 xclip
+xorg-xev
 xorg-xinput
+xorg-xkill
+xorg-xwininfo
 xss-lock
 yt-dlp
 zathura
