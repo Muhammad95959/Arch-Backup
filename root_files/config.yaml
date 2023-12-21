@@ -7,6 +7,7 @@
 
   # alternative syntax
   - {from: KEY_D, to: KEY_DELETE}
+  - {from: KEY_SLASH, to: KEY_BACKSLASH}
 
   # vim home row
   - {from: KEY_H, to: KEY_LEFT}
@@ -48,6 +49,7 @@
 
   # alternative syntax
   - {from: KEY_D, to: KEY_DELETE}
+  - {from: KEY_SLASH, to: KEY_BACKSLASH}
 
   # vim home row
   - {from: KEY_H, to: KEY_LEFT}
