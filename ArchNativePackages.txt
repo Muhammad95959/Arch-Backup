@@ -17,6 +17,7 @@ dbus-glib
 dnsmasq
 efibootmgr
 expect
+ext4magic
 eza
 fd
 ffmpegthumbnailer
@@ -29,6 +30,7 @@ gdb
 gimp
 git
 gnome-disk-utility
+gnome-mines
 gparted
 grub
 grub-btrfs

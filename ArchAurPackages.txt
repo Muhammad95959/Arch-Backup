@@ -1,6 +1,8 @@
+aisleriot-git
 annotator
 auto-cpufreq
 autojump
+boomaga
 brave-bin
 deadd-notification-center-bin
 dragon-drop
