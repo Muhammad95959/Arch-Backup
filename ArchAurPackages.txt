@@ -1,4 +1,3 @@
-aisleriot-git
 annotator
 auto-cpufreq
 autojump

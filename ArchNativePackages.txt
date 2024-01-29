@@ -6,6 +6,7 @@ atool
 base
 base-devel
 bat
+bc
 bleachbit
 blueman
 bridge-utils
@@ -30,7 +31,6 @@ gdb
 gimp
 git
 gnome-disk-utility
-gnome-mines
 gparted
 grub
 grub-btrfs
@@ -78,6 +78,7 @@ os-prober
 pass
 pavucontrol
 pdfarranger
+perl-file-mimeinfo
 perl-image-exiftool
 picard
 picom
