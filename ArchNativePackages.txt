@@ -16,6 +16,7 @@ cmatrix
 cups
 dbus-glib
 dnsmasq
+docker
 efibootmgr
 expect
 ext4magic
@@ -26,6 +27,7 @@ file-roller
 flameshot
 flatpak
 font-manager
+fzf
 gcolor3
 gdb
 gimp
@@ -69,10 +71,11 @@ npm
 ntfs-3g
 nvidia-lts
 nvidia-prime
+obconf
 obs-studio
-ocrdesktop
 octave
 okular
+openbox
 openbsd-netcat
 os-prober
 pass
@@ -103,11 +106,14 @@ rofi-pass
 rpm-tools
 samba
 shotcut
+shotwell
 system-config-printer
 tealdeer
+tesseract
 thunar
 thunar-archive-plugin
 timeshift
+tint2
 tk
 tlp
 toilet
@@ -134,6 +140,7 @@ wget
 wmctrl
 xcalib
 xclip
+xfce4-screensaver
 xorg-xev
 xorg-xinput
 xorg-xkill

@@ -4,14 +4,15 @@ autojump
 boomaga
 brave-bin
 deadd-notification-center-bin
+downgrade
 dragon-drop
 gotop-bin
-i3lock-color
 jetbrains-toolbox
 layan-gtk-theme-git
-nomacs
 notify-send-py
+obmenu-generator
 oxygen-cursors
+perl-linux-desktopfiles
 pomatez
 rofi-gpaste-git
 setcapslock
@@ -25,4 +26,5 @@ ttf-segoe-ui-variable
 uget-integrator
 uget-integrator-chromium
 ventoy-bin
+whatsie
 yay-bin
