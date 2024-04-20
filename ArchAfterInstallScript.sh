@@ -44,6 +44,8 @@ sudo systemctl enable --now tlp.service
 sudo systemctl enable --now udevmon
 sudo systemctl enable --now vnstat.service
 
+sudo npm install -g live-server
+
 sudo -s
 echo "kernel.sysrq = 1" >> /etc/sysctl.d/99-sysctl.conf
 rm -r /root/.local/share/nvim /root/.config/nvim /root/.config/ranger /root/.local/share/ranger /root/.zshrc /root/.config/zsh /root/.themes /root/.icons /root/.fonts /root/.config/gtk-2.0 /root/.config/gtk-3.0 /root/.config/gtk-4.0
