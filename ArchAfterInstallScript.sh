@@ -10,6 +10,7 @@ sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/20-connectivity
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/background.jpg /etc/lightdm
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/config.yaml /etc/interception-vimproved/
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/environment /etc
+sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/my-kbd.yaml /etc/interception-vimproved/
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/my-udevmon.yaml /etc/interception/udevmon.d
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/nobeep.conf /etc/modprobe.d
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/slick-greeter.conf /etc/lightdm

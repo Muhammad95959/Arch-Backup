@@ -5,7 +5,6 @@ deadd-notification-center-bin
 dk
 downgrade
 dragon-drop
-edex-ui-bin
 gotop-bin
 itools
 jetbrains-toolbox
@@ -32,6 +31,5 @@ tuxmath
 uget-integrator
 uget-integrator-chromium
 ventoy-bin
-visual-studio-code-bin
 whatsie
 yay-bin

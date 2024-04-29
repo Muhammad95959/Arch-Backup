@@ -19,6 +19,7 @@ cheese
 cmatrix
 cups
 dbus-glib
+diffstat
 dnsmasq
 docker
 efibootmgr
