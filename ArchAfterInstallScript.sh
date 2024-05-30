@@ -1,6 +1,7 @@
 ### Install packages
 
 chsh -s $(which zsh)
+sudo ln -sfT dash /usr/bin/sh
 sudo sed -Ei '/Color/s/^#//' /etc/pacman.conf
 sudo sed -Ei 's/#ParallelDownloads = 5/ParallelDownloads = 10/' /etc/pacman.conf
 sudo sed -Ei 's/CriticalPowerAction=HybridSleep/CriticalPowerAction=PowerOff/' /etc/UPower/UPower.conf
@@ -8,6 +9,7 @@ sudo flatpak override --filesystem=~/.themes
 sudo cp -r /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/volnoti /usr/share/pixmaps/
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/20-connectivity.conf /etc/NetworkManager/conf.d
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/background.jpg /etc/lightdm
+sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/bilal /usr/local/bin
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/config.yaml /etc/interception-vimproved/
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/environment /etc
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/my-kbd.yaml /etc/interception-vimproved/
