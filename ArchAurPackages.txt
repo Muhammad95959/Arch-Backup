@@ -3,15 +3,17 @@ deadd-notification-center-bin
 dk
 dragon-drop
 gotop-bin
+grub-hook
 itools
 libitl
 lutris-wine-meta
 notify-send-py
 nvidia-535xx-dkms
 nvidia-535xx-utils
+nwg-look-bin
 oxygen-cursors
 pomatez
-rofi-gpaste-git
+rofi-nerdy
 setcapslock
 telegram-desktop-bin
 ttf-ms-win11-auto
@@ -19,4 +21,5 @@ ttf-segoe-ui-variable
 uget-integrator
 uget-integrator-chromium
 whatsie
+wl-gammarelay-rs
 yay-bin
