@@ -6,7 +6,6 @@ gotop-bin
 grub-hook
 itools
 libitl
-lutris-wine-meta
 notify-send-py
 nvidia-535xx-dkms
 nvidia-535xx-utils

@@ -10,7 +10,6 @@ base-devel
 bat
 bc
 bear
-binder_linux-dkms
 blanket
 bleachbit
 blueman
@@ -20,7 +19,6 @@ brave-bin
 breeze
 bridge-utils
 brillo
-cage
 chaotic-keyring
 chaotic-mirrorlist
 cheese
@@ -55,7 +53,6 @@ gimp
 git
 git-delta
 gnome-disk-utility
-gnome-mines
 gnome-themes-extra
 go
 gparted
@@ -138,8 +135,8 @@ qutebrowser
 ranger
 redshift
 ripgrep
+rofi-lbonn-wayland-git
 rofi-pass
-rofi-wayland
 rofimoji
 rpm-tools
 rust
@@ -184,11 +181,8 @@ virt-viewer
 vnstat
 w3m
 waybar
-waydroid
-waydroid-script-git
 waypaper-git
 wget
-wine-staging
 wireplumber
 wl-clipboard
 wlrobs-hg
