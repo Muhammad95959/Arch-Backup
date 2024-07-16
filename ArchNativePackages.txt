@@ -46,8 +46,9 @@ file-roller
 flameshot-git
 flatpak
 font-manager
+fontforge
 fzf
-gcolor3-xorg
+gcolor3
 gdb
 gimp
 git
@@ -66,16 +67,20 @@ gvfs-smb
 hyprland-git
 hyprlock-git
 hyprpaper-git
+hyprpicker-git
+hyprwayland-scanner-git
 i3-wm
 img2pdf
 inetutils
 inkscape
 inotify-tools
+inter-font
 interception-tools
 iptables-nft
 jetbrains-toolbox
 jq
 kdenlive
+keyd
 kitty
 kvantum
 kvantum-qt5
@@ -88,7 +93,6 @@ linux-lts-headers
 man-db
 man-pages
 mariadb
-meson
 mkinitcpio-firmware
 mousepad
 mpv
@@ -100,6 +104,7 @@ noto-fonts
 noto-fonts-emoji
 npm
 ntfs-3g
+numix-circle-icon-theme-git
 nvidia-prime
 nvtop
 obs-studio
@@ -118,7 +123,6 @@ pipewire-pulse
 pkgfile
 playerctl
 plocate
-pnpm
 polkit-gnome
 polybar
 pulsemixer
@@ -132,7 +136,7 @@ qt5-quickcontrols2
 qt5ct
 qt6ct
 qutebrowser
-ranger
+ranger-git
 redshift
 ripgrep
 rofi-lbonn-wayland-git
@@ -168,6 +172,7 @@ ttf-scheherazade-new
 ttf-ubuntu-nerd
 tumbler
 udiskie
+ueberzugpp
 uget
 unclutter
 unrar
@@ -179,7 +184,6 @@ vimiv
 virt-manager
 virt-viewer
 vnstat
-w3m
 waybar
 waypaper-git
 wget
@@ -196,10 +200,10 @@ xorg-xinput
 xorg-xkill
 xorg-xwayland
 xorg-xwininfo
+xsel
 xss-lock
 ydotool
 yt-dlp
-zathura
-zathura-pdf-poppler
 zip
+zoxide
 zsh

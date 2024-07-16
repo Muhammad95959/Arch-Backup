@@ -2,10 +2,12 @@ boomaga
 deadd-notification-center-bin
 dk
 dragon-drop
+girara-git
 gotop-bin
 grub-hook
 itools
 libitl
+nodejs-live-server
 notify-send-py
 nvidia-535xx-dkms
 nvidia-535xx-utils
@@ -22,3 +24,5 @@ uget-integrator-chromium
 whatsie
 wl-gammarelay-rs
 yay-bin
+zathura-git
+zathura-pdf-poppler-git
