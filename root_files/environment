@@ -4,6 +4,7 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 
+export BAT_THEME="Catppuccin Mocha"
 export MANPAGER='nvim +Man!'
 export TERMCMD=kitty
 export EDITOR=nvim

@@ -26,18 +26,16 @@ sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/nobeep.conf /et
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/smb.conf /etc/samba
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
-sudo systemctl start smb
-sudo systemctl enable smb
-sudo systemctl start nmb
-sudo systemctl enable nmb
+sudo systemctl enable --now smb
+sudo systemctl enable --now nmb
 sudo smbpasswd -a muhammad
 sudo groupadd -r sambauser
 sudo gpasswd sambauser -a muhammad
 sudo systemctl restart smb
 sudo systemctl restart nmb
 
-sudo systemctl enable libvirtd.service
-sudo systemctl start libvirtd.service
+sudo systemctl enable --now libvirtd.service
+sudo systemctl libvirtd.service
 sudo sed -Ei '/unix_sock_group = "libvirt"/s/^#//' /etc/pacman.conf
 sudo sed -Ei '/unix_sock_rw_perms = "0770"/s/^#//' /etc/pacman.conf
 sudo usermod -a -G libvirt $(whoami)
@@ -46,6 +44,9 @@ sudo systemctl restart libvirtd.service
 sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nested=1
 echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf
+sudo systemctl enable --now iptables.service
+sudo virsh net-autostart default
+sudo virsh net-start default
 
 sudo systemctl enable --now auto-cpufreq
 sudo systemctl enable --now cups
