@@ -1,0 +1,17 @@
+[Unit]
+Description=Kanata keyboard remapper
+Documentation=https://github.com/jtroo/kanata
+
+[Service]
+Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
+Environment=DISPLAY=:0
+Type=simple
+ExecStart=/usr/bin/sh -c 'exec $$(which kanata) -nc /root/.config/kanata/kanata.kbd'
+Restart=no
+Nice=-10
+IOSchedulingClass=1
+IOSchedulingPriority=4
+
+[Install]
+WantedBy=default.target
+

@@ -12,6 +12,7 @@ chsh -s $(which zsh)
 sudo ln -sfT dash /usr/bin/sh
 sudo sed -Ei '/Color/s/^#//' /etc/pacman.conf
 sudo sed -Ei 's/#ParallelDownloads = 5/ParallelDownloads = 10/' /etc/pacman.conf
+sudo sed -Ei "s/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=3s/" /etc/systemd/system.conf
 sudo sed -Ei 's/CriticalPowerAction=HybridSleep/CriticalPowerAction=PowerOff/' /etc/UPower/UPower.conf
 sudo flatpak override --filesystem=~/.themes
 sudo cp -r /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/volnoti /usr/share/pixmaps/
@@ -35,9 +36,8 @@ sudo systemctl restart smb
 sudo systemctl restart nmb
 
 sudo systemctl enable --now libvirtd.service
-sudo systemctl libvirtd.service
-sudo sed -Ei '/unix_sock_group = "libvirt"/s/^#//' /etc/pacman.conf
-sudo sed -Ei '/unix_sock_rw_perms = "0770"/s/^#//' /etc/pacman.conf
+sudo sed -Ei '/unix_sock_group = "libvirt"/s/^#//' /etc/libvirt/libvirtd.conf
+sudo sed -Ei '/unix_sock_rw_perms = "0770"/s/^#//' /etc/libvirt/libvirtd.conf
 sudo usermod -a -G libvirt $(whoami)
 newgrp libvirt
 sudo systemctl restart libvirtd.service
@@ -63,7 +63,8 @@ echo "modules_force_load: nvidia,nvidia_modeset,nvidia_uvm,nvidia_drm" >> /etc/b
 rm -r /root/.local/share/nvim /root/.config/nvim /root/.config/ranger /root/.local/share/ranger /root/.zshrc /root/.config/zsh /root/.themes /root/.icons /root/.fonts /root/.config/gtk-2.0 /root/.config/gtk-3.0 /root/.config/gtk-4.0
 ln -s /home/muhammad/.local/share/nvim /root/.local/share/
 ln -s /home/muhammad/.config/nvim /root/.config/
-ln -s /home/muhammad/.config/ranger /root/.config/
+ln -s /home/muhammad/.config/yazi /root/.config/
+ln -s /home/muhammad/.config/kanata /root/.config/
 ln -s /home/muhammad/.local/share/ranger /root/.local/share/
 ln -s /home/muhammad/.zshrc /root/
 ln -s /home/muhammad/.config/zsh /root/.config/
