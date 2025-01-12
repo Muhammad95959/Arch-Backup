@@ -1,5 +1,4 @@
 7-zip
-autojump
 boomaga
 brave-bin
 dashbinsh
@@ -8,6 +7,7 @@ dk
 downgrade
 dracula-cursors-git
 dragon-drop
+ext4magic
 flameshot-git
 flowtime
 grub-hook
@@ -16,6 +16,8 @@ hyprsunset
 itools
 jetbrains-toolbox
 kanata-bin
+mongodb-bin
+mongodb-compass
 mpvpaper
 nodejs-live-server
 notify-send-py

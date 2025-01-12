@@ -32,7 +32,6 @@ docker
 efibootmgr
 entr
 evtest
-ext4magic
 eza
 fastfetch
 fd
