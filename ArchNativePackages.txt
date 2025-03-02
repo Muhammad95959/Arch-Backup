@@ -61,6 +61,7 @@ gvfs-smb
 hunspell-en_us
 hyprland
 hyprlock
+hyprsunset
 hyprwayland-scanner
 i3-wm
 img2pdf
@@ -74,7 +75,9 @@ kitty
 kvantum
 kvantum-qt5
 lazygit
+lib32-nvidia-utils
 libreoffice-still
+libva-nvidia-driver
 linux
 linux-firmware
 linux-headers
@@ -92,6 +95,7 @@ npm
 ntfs-3g
 nvidia
 nvidia-prime
+nvidia-settings
 nvidia-utils
 nvtop
 nwg-drawer
@@ -99,6 +103,7 @@ nwg-look
 obs-studio
 octave
 openbsd-netcat
+opencl-nvidia
 os-prober
 pass
 pavucontrol
@@ -129,6 +134,7 @@ ripgrep
 rofi-pass
 rofimoji
 rpm-tools
+ruby-erb
 rust
 samba
 sddm
@@ -147,6 +153,7 @@ thunar
 thunar-archive-plugin
 timeshift
 tlp
+tmux
 toilet
 torbrowser-launcher
 transmission-gtk
