@@ -22,6 +22,7 @@ sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/default.conf /u
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/environment /etc
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/my-kbd.yaml /etc/interception-vimproved/
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/nobeep.conf /etc/modprobe.d
+sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/rofi-pass-x11 /usr/local/bin
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/smb.conf /etc/samba
 sudo mkdir -p /etc/pacman.d/hooks/ && sudo mv /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/nvidia.hook /etc/pacman.d/hooks/
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
