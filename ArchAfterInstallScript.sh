@@ -17,9 +17,13 @@ sudo sed -Ei 's/CriticalPowerAction=HybridSleep/CriticalPowerAction=PowerOff/' /
 sudo flatpak override --filesystem=~/.themes
 sudo cp -r /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/volnoti /usr/share/pixmaps/
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/20-connectivity.conf /etc/NetworkManager/conf.d
+sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/Arc\ Dark.ini /usr/share/albert/widgetsboxmodel/themes
+sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/Tokyonight\ Dark.ini /usr/share/albert/widgetsboxmodel/themes
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/bilal /usr/local/bin
+sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/confetti /usr/local/bin
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/default.conf /usr/lib/sddm/sddm.conf.d
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/environment /etc
+sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/hyprland-minimizer /usr/local/bin
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/my-kbd.yaml /etc/interception-vimproved/
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/nobeep.conf /etc/modprobe.d
 sudo cp /mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files/rofi-pass-x11 /usr/local/bin
