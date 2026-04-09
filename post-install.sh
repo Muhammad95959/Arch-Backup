@@ -54,7 +54,13 @@ sudo sed -Ei 's/CriticalPowerAction=HybridSleep/CriticalPowerAction=PowerOff/' \
   /etc/UPower/UPower.conf
 ok "Stop timeout 3 s, critical power action → PowerOff"
 
-# ── 7. Copy config/root files ────────────────────────────────
+# ── 7. sddm theme ────────────────────────────────────────────
+log "Installing simple-sddm theme"
+git clone https://github.com/JaKooLit/simple-sddm.git ~/simple-sddm
+sudo mv ~/simple-sddm /usr/share/sddm/themes/
+ok "Done"
+
+# ── 8. Copy config/root files ────────────────────────────────
 log "Copying root-level config files"
 
 copy_root() {
@@ -76,17 +82,18 @@ copy_root "hyprland-minimizer"     /usr/local/bin/hyprland-minimizer
 copy_root "kanata.service"         /etc/systemd/system/kanata.service
 copy_root "nobeep.conf"            /etc/modprobe.d/nobeep.conf
 copy_root "smb.conf"               /etc/samba/smb.conf
+copy_root "theme.conf"             /usr/share/sddm/themes/simple-sddm/theme.conf
 
 # Make /usr/local/bin scripts executable
 sudo chmod +x /usr/local/bin/{bilal,confetti,hyprland-minimizer}
 
-# ── 8. GTK dark mode ─────────────────────────────────────────
+# ── 9. GTK dark mode ─────────────────────────────────────────
 log "GTK dark mode"
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 sudo flatpak override --filesystem=~/.themes
 ok "Done"
 
-# ── 9. Samba ─────────────────────────────────────────────────
+# ── 10. Samba ─────────────────────────────────────────────────
 log "Samba setup"
 sudo systemctl enable --now smb nmb
 sudo groupadd -r sambauser 2>/dev/null || true
@@ -95,7 +102,7 @@ sudo smbpasswd -a muhammad
 sudo systemctl restart smb nmb
 ok "Samba running"
 
-# ── 10. Virtualization (KVM/libvirt) ─────────────────────────
+# ── 11. Virtualization (KVM/libvirt) ─────────────────────────
 log "Virtualization setup"
 sudo systemctl enable --now libvirtd.service
 
@@ -114,25 +121,25 @@ sudo virsh net-autostart default
 sudo virsh net-start default 2>/dev/null || true
 ok "KVM/libvirt ready (re-login for group membership)"
 
-# ── 11. Remaining services ────────────────────────────────────
+# ── 12. Remaining services ────────────────────────────────────
 log "Enabling services"
 for svc in auto-cpufreq cups kanata.service systemd-timesyncd vnstat.service; do
   sudo systemctl enable --now "$svc" && ok "$svc"
 done
 
-# ── 12. Global npm packages ───────────────────────────────────
+# ── 13. Global npm packages ───────────────────────────────────
 log "Global npm/pnpm packages"
 pnpm add -g neovim live-server @google/gemini-cli
 ok "neovim, live-server, gemini-cli"
 
-# ── 13. Flatpak apps ─────────────────────────────────────────
+# ── 14. Flatpak apps ─────────────────────────────────────────
 log "Flatpak apps"
 flatpak install -y flathub \
   io.github._0xzer0x.qurancompanion \
   net.sapples.LiveCaptions
 ok "Flatpak apps installed"
 
-# ── 14. Root account symlinks ─────────────────────────────────
+# ── 15. Root account symlinks ─────────────────────────────────
 log "Root user symlinks"
 sudo bash -s <<'ROOT'
   set -euo pipefail
