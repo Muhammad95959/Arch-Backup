@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
-# ============================================================
+# ===============================================================
 # Arch Linux Post-Install Script
-# ============================================================
+# ===============================================================
 set -euo pipefail
 
-# ── Helpers ─────────────────────────────────────────────────
+# ── Helpers ────────────────────────────────────────────────────
 log()  { echo -e "\n\e[1;34m==> $*\e[0m"; }
 ok()   { echo    "    ✓ $*"; }
 fail() { echo -e "\e[1;31m✗ $*\e[0m" >&2; exit 1; }
 
-BACKUP_ROOT="/mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root_files"
+BACKUP_ROOT="/mnt/Disk_D/Muhammad/Repositories/Arch-Backup/root-files"
 
-# ── 1. System update ─────────────────────────────────────────
+# ── 1. System update ───────────────────────────────────────────
 log "System update"
 sudo pacman -Syu --noconfirm
 
-# ── 2. AUR helper (paru) ─────────────────────────────────────
+# ── 2. AUR helper (paru) ───────────────────────────────────────
 log "Installing paru"
 if ! command -v paru &>/dev/null; then
   tmp=$(mktemp -d)
@@ -27,26 +27,26 @@ else
   ok "paru already present, skipping"
 fi
 
-# ── 3. Packages ──────────────────────────────────────────────
+# ── 3. Packages ────────────────────────────────────────────────
 log "Installing native packages"
 paru -S --needed --noconfirm - < ArchNativePackages.txt
 
 log "Installing AUR packages"
 paru -S --needed --noconfirm - < ArchAurPackages.txt
 
-# ── 4. Shell ─────────────────────────────────────────────────
+# ── 4. Shell ───────────────────────────────────────────────────
 log "Shell configuration"
 chsh -s "$(which zsh)"
 sudo ln -sfT dash /usr/bin/sh
 ok "Default shell → zsh, /usr/bin/sh → dash"
 
-# ── 5. Pacman tweaks ─────────────────────────────────────────
+# ── 5. Pacman tweaks ───────────────────────────────────────────
 log "Pacman configuration"
 sudo sed -Ei '/Color/s/^#//'                              /etc/pacman.conf
 sudo sed -Ei 's/#ParallelDownloads = 5/ParallelDownloads = 10/' /etc/pacman.conf
 ok "Color + parallel downloads enabled"
 
-# ── 6. Systemd tweaks ────────────────────────────────────────
+# ── 6. Systemd tweaks ──────────────────────────────────────────
 log "Systemd configuration"
 sudo sed -Ei "s/#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=3s/" \
   /etc/systemd/system.conf
@@ -54,13 +54,13 @@ sudo sed -Ei 's/CriticalPowerAction=HybridSleep/CriticalPowerAction=PowerOff/' \
   /etc/UPower/UPower.conf
 ok "Stop timeout 3 s, critical power action → PowerOff"
 
-# ── 7. sddm theme ────────────────────────────────────────────
+# ── 7. sddm theme ──────────────────────────────────────────────
 log "Installing simple-sddm theme"
 git clone https://github.com/JaKooLit/simple-sddm.git ~/simple-sddm
 sudo mv ~/simple-sddm /usr/share/sddm/themes/
 ok "Done"
 
-# ── 8. Copy config/root files ────────────────────────────────
+# ── 8. Copy config/root files ──────────────────────────────────
 log "Copying root-level config files"
 
 copy_root() {
@@ -87,13 +87,13 @@ copy_root "theme.conf"             /usr/share/sddm/themes/simple-sddm/theme.conf
 # Make /usr/local/bin scripts executable
 sudo chmod +x /usr/local/bin/{bilal,confetti,hyprland-minimizer}
 
-# ── 9. GTK dark mode ─────────────────────────────────────────
+# ── 9. GTK dark mode ───────────────────────────────────────────
 log "GTK dark mode"
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 sudo flatpak override --filesystem=~/.themes
 ok "Done"
 
-# ── 10. Samba ─────────────────────────────────────────────────
+# ── 10. Samba ──────────────────────────────────────────────────
 log "Samba setup"
 sudo systemctl enable --now smb nmb
 sudo groupadd -r sambauser 2>/dev/null || true
@@ -102,44 +102,39 @@ sudo smbpasswd -a muhammad
 sudo systemctl restart smb nmb
 ok "Samba running"
 
-# ── 11. Virtualization (KVM/libvirt) ─────────────────────────
+# ── 11. Virtualization (KVM/libvirt) ───────────────────────────
 log "Virtualization setup"
+paru -S --needed --noconfirm qemu-full virt-manager virt-viewer dnsmasq
+
 sudo systemctl enable --now libvirtd.service
-
-sudo sed -Ei '/unix_sock_group = "libvirt"/s/^#//'       /etc/libvirt/libvirtd.conf
-sudo sed -Ei '/unix_sock_rw_perms = "0770"/s/^#//'       /etc/libvirt/libvirtd.conf
-sudo usermod -aG libvirt "$(whoami)"
-
-sudo modprobe -r kvm_intel 2>/dev/null || true
-sudo modprobe kvm_intel nested=1
-echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf
-
-sudo systemctl enable --now iptables.service
-sudo systemctl restart libvirtd.service
+sudo systemctl enable --now virtlogd.service
+sudo systemctl enable --now virtlogd.socket
 
 sudo virsh net-autostart default
 sudo virsh net-start default 2>/dev/null || true
+
+sudo usermod -aG libvirt "$(whoami)"
 ok "KVM/libvirt ready (re-login for group membership)"
 
-# ── 12. Remaining services ────────────────────────────────────
+# ── 12. Remaining services ─────────────────────────────────────
 log "Enabling services"
-for svc in auto-cpufreq cups kanata.service systemd-timesyncd vnstat.service; do
+for svc in auto-cpufreq cups kanata.service systemd-timesyncd vnstat.service bluetooth.service; do
   sudo systemctl enable --now "$svc" && ok "$svc"
 done
 
-# ── 13. Global npm packages ───────────────────────────────────
+# ── 13. Global npm packages ────────────────────────────────────
 log "Global npm/pnpm packages"
-pnpm add -g neovim live-server @google/gemini-cli
+pnpm add -g neovim live-server typescript tsx @google/gemini-cli
 ok "neovim, live-server, gemini-cli"
 
-# ── 14. Flatpak apps ─────────────────────────────────────────
+# ── 14. Flatpak apps ───────────────────────────────────────────
 log "Flatpak apps"
 flatpak install -y flathub \
   io.github._0xzer0x.qurancompanion \
   net.sapples.LiveCaptions
 ok "Flatpak apps installed"
 
-# ── 15. Root account symlinks ─────────────────────────────────
+# ── 15. Root account symlinks ──────────────────────────────────
 log "Root user symlinks"
 sudo bash -s <<'ROOT'
   set -euo pipefail
