@@ -22,7 +22,9 @@ dash
 dbus-glib
 diffstat
 distrobox
+dnsmasq
 docker
+docker-buildx
 docker-compose
 efibootmgr
 entr
@@ -122,6 +124,9 @@ python-pyclip
 python-pynvim
 python-scipy
 qalculate-gtk
+qemu-full
+qt5-graphicaleffects
+qt5-quickcontrols2
 qt5ct
 qt6ct
 qutebrowser
@@ -163,6 +168,8 @@ uget
 unrar
 unzip
 upower
+virt-manager
+virt-viewer
 vnstat
 waybar
 wget

@@ -26,6 +26,7 @@ octave-symbolic
 opencode-bin
 paru
 paru-debug
+posting-git
 postman-bin
 pup-bin
 python312
@@ -41,6 +42,7 @@ uget-integrator
 uget-integrator-chromium
 unimatrix-git
 ventoy-bin
+visual-studio-code-bin
 webcord-bin
 wl-kbptr
 wlogout
